@@ -1,0 +1,8 @@
+# Protect sensitive environment files - NEVER commit these to GitHub
+.env
+
+# Node.js dependencies
+node_modules/
+
+# JSON database (local only - data is now in MongoDB)
+products.json

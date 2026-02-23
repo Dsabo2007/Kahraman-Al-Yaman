@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>كهرمان اليمان | Kahramana Al-Yaman</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="alternate icon" href="favicon.ico">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+
+</head>
+
+<body>
+
+    <!-- Header / Nav -->
+    <nav class="top-nav">
+        <div class="logo-container">
+            <i class="fa-solid fa-gem nav-logo-icon"></i>
+            <h3 class="logo-text" data-i18n="site_name">كهرمان اليمان</h3>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="#home" data-i18n="nav_home">الرئيسية</a></li>
+            <li><a href="#products-feed" data-i18n="nav_products">المنتجات</a></li>
+        </ul>
+
+        <button id="lang-toggle" class="lang-switch">ENGLISH</button>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero" id="home">
+        <img src="images/photo_2026-02-09_18-35-58.jpg" alt="Kahraman Al-Yaman" class="hero-bg-img">
+        <div class="hero-content">
+            <a href="#products-feed" class="btn btn-primary hero-btn">
+                <span data-i18n="start">ابد</span>
+                <i class="fa-solid fa-arrow-down"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container" id="products-feed">
+
+        <!-- Search Section (Sticky) -->
+        <div class="search-container">
+            <div class="view-toggles">
+                <button id="view-list" class="view-btn active" title="List View">
+                    <i class="fa-solid fa-list"></i>
+                </button>
+                <button id="view-grid" class="view-btn" title="Grid View">
+                    <i class="fa-solid fa-border-all"></i>
+                </button>
+            </div>
+
+            <!-- Filter Bar -->
+            <div class="filter-bar">
+                <button class="filter-btn active" data-filter="diamond" data-i18n="logo_diamond">لوقو ماسي</button>
+                <button class="filter-btn" data-filter="gold" data-i18n="logo_gold">لوقو ذهبي</button>
+                <button class="filter-btn" data-filter="silver" data-i18n="logo_silver">لوقو فضي</button>
+            </div>
+
+            <form class="search-box" id="search-form">
+                <input type="text" id="search-input" class="search-input" placeholder="ادخل رقم المنتج..."
+                    data-i18n-placeholder="search_placeholder">
+                <button type="submit" class="search-btn">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </form>
+        </div>
+
+        <!-- Products Feed -->
+        <div id="products-list" class="products-section">
+            <!-- Products will be injected here via JS -->
+            <!-- Example Static Card for reference matching the request -->
+            <div class="product-card">
+                <div class="product-id-badge">
+                    <i class="fa-solid fa-hashtag"></i> <span>101</span>
+                </div>
+                <div class="product-image-frame">
+                    <!-- Placeholder image logic in JS -->
+                </div>
+                <div class="product-details">
+                    <h2 class="product-title">اسم المنتج</h2>
+                    <p class="product-desc">تفاصيل المنتج تظهر هنا...</p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <p class="dev-credit" data-i18n="footer_dev">تم البرمجة والتطوير بواسطة المهندس محمد صباح</p>
+            <a href="https://wa.me/9647731929614" target="_blank" class="whatsapp-link" title="WhatsApp">
+                <i class="fa-brands fa-whatsapp"></i>
+            </a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

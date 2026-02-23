@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Background Circle -->
+  <circle cx="256" cy="256" r="256" fill="#5C2C2E"/>
+  
+  <!-- Golden Gem/Diamond Shape -->
+  <g transform="translate(256, 256)">
+    <!-- Main Diamond -->
+    <path d="M 0,-120 L 80,-40 L 80,40 L 0,120 L -80,40 L -80,-40 Z" 
+          fill="url(#goldGradient)" 
+          stroke="#B8942C" 
+          stroke-width="6"/>
+    
+    <!-- Inner Lines for Facets -->
+    <line x1="0" y1="-120" x2="0" y2="120" stroke="#B8942C" stroke-width="3" opacity="0.5"/>
+    <line x1="-80" y1="-40" x2="80" y2="40" stroke="#B8942C" stroke-width="3" opacity="0.5"/>
+    <line x1="-80" y1="40" x2="80" y2="-40" stroke="#B8942C" stroke-width="3" opacity="0.5"/>
+    
+    <!-- Center Highlight -->
+    <circle cx="0" cy="0" r="30" fill="#E8C974" opacity="0.6"/>
+  </g>
+  
+  <!-- Gradient Definition -->
+  <defs>
+    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#E8C974;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#D4AF37;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#B8942C;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+</svg>
