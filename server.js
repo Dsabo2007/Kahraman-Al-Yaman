@@ -19,13 +19,22 @@ app.post('/api/migrate-seed', async (req, res) => {
             return res.status(403).json({ error: 'Forbidden' });
         }
 
-        const jsonPath = path.join(__dirname, 'products.json');
         let localProducts = [];
-        try {
-            const raw = await fs.readFile(jsonPath, 'utf8');
-            localProducts = JSON.parse(raw);
-        } catch {
-            return res.status(404).json({ error: 'products.json not found on server' });
+
+        // 1. Try to get products from request body (recovery mode)
+        if (req.body.products && Array.isArray(req.body.products)) {
+            localProducts = req.body.products;
+            console.log(`Received ${localProducts.length} products via request body for recovery.`);
+        }
+        // 2. Fallback to products.json
+        else {
+            const jsonPath = path.join(__dirname, 'products.json');
+            try {
+                const raw = await fs.readFile(jsonPath, 'utf8');
+                localProducts = JSON.parse(raw);
+            } catch {
+                return res.status(404).json({ error: 'products.json not found on server and no data provided in body' });
+            }
         }
 
         const existingCount = await Product.countDocuments();
