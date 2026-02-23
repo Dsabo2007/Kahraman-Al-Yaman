@@ -230,7 +230,7 @@ function checkAdminAuth() {
 // --- Data Layer (Node.js API) ---
 async function fetchProducts() {
     try {
-        const response = await fetch('http://localhost:3000/api/products');
+        const response = await fetch('https://kahraman-al-yaman-production.up.railway.app/api/products');
         if (!response.ok) throw new Error('Failed to fetch products from server');
 
         const data = await response.json();
@@ -500,7 +500,7 @@ function initAdmin() {
             if (productIndex !== -1) {
                 try {
                     showToast("جاري التحديث...", "normal");
-                    const res = await fetch(`http://localhost:3000/api/products/${editingProductId}`, {
+                    const res = await fetch(`https://kahraman-al-yaman-production.up.railway.app/api/products/${editingProductId}`, {
                         method: 'PUT',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify(productData)
@@ -535,7 +535,7 @@ function initAdmin() {
                 try {
                     showToast("جاري الحفظ...", "normal");
                     const docId = products[existingIndex].id;
-                    const res = await fetch(`http://localhost:3000/api/products/${docId}`, {
+                    const res = await fetch(`https://kahraman-al-yaman-production.up.railway.app/api/products/${docId}`, {
                         method: 'PUT',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify(productData)
@@ -552,7 +552,7 @@ function initAdmin() {
                 // ADD NEW
                 try {
                     showToast("جاري الحفظ...", "normal");
-                    const res = await fetch(`http://localhost:3000/api/products`, {
+                    const res = await fetch(`https://kahraman-al-yaman-production.up.railway.app/api/products`, {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify(productData)
@@ -650,7 +650,7 @@ function initAdmin() {
     window.deleteProduct = async (id) => {
         if (confirm('هل انت متاكد من الحذف؟')) {
             try {
-                const res = await fetch(`http://localhost:3000/api/products/${id}`, {
+                const res = await fetch(`https://kahraman-al-yaman-production.up.railway.app/api/products/${id}`, {
                     method: 'DELETE'
                 });
 
